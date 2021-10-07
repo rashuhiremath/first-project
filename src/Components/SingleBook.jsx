@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 // import the commentsArea (FetchedComments)
 import FetchedComment from "./FetchedComment";
 import CommentArea from "./CommentArea";
@@ -25,7 +25,9 @@ class SingleBook extends React.Component {
 // you need to import the component and then create a logic to display it 
   render() {
     return (
-      <>
+      <div>
+          <Row>
+              <Col md={4}>
         <Card style={{ width: "18rem" }}>
             
           <Card.Img variant="top" src={this.props.book.img} onClick={this.toggleCommentsArea} />
@@ -35,11 +37,16 @@ class SingleBook extends React.Component {
             <Button variant="primary">{this.props.book.price}</Button>
           </Card.Body>
         </Card>
+        </Col>
+        
+        <Col className="px-5 mr-auto">
         {/* {create a logic to display the comments , probably you also need to pass the book.asin or _id to the fetchedComment} */
-        this.state.isClicked &&
-        <CommentArea />
+        // this.state.isClicked &&
+    <CommentArea />
         }
-      </>
+        </Col>
+        </Row>
+      </div>
     );
   }
 }

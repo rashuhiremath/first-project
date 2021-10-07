@@ -11,8 +11,8 @@ class LatestRelease extends Component {
         <Row>
           
             {books.map((book) => (
-              <Col md={4} lg={3}>
-              <Card  key={book.id}>
+              <Col >
+              <Card  key={book._id}>
                 <Card.Img variant="top" src={book.img} />
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>

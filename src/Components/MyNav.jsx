@@ -2,6 +2,8 @@
 import  Navbar  from "react-bootstrap/Navbar"
 import  Nav  from "react-bootstrap/Nav"
 import { Component } from "react"
+import { Link } from "react-router-dom"
+import { withRouter } from "react-router"
 
 
 class MyNav extends Component {
@@ -16,6 +18,9 @@ class MyNav extends Component {
       <Nav.Link href="#features">Home</Nav.Link>
       <Nav.Link href="#pricing">About</Nav.Link>
       <Nav.Link href="#pricing">Browse</Nav.Link>
+      <Link to="/registration" className="nav-link">
+      Registration
+      </Link>
       
     </Nav>
     
@@ -23,4 +28,4 @@ class MyNav extends Component {
 </Navbar>)
 }
 }
-export default MyNav
+export default withRouter(MyNav) 
